@@ -6,4 +6,42 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<router-outlet></router-outlet>
+<router-outlet>
+  <noscript>
+    <p>
+      This site requires JavaScript. I will only be visible if you have it
+      disabled.
+    </p>
+  </noscript>
+
+  <div class="container text-center calc shadow-lg">
+    <div class="row">
+      <input type="text" class="form-control res" readonly value={{op}}/>
+      <input type="text" class="form-control op" readonly value={{res}}/>
+    </div>
+    <div class="row">
+      <div class="num-pan text-start">
+        <button class="btn btn-primary" (click)="panNumero('9')">9</button>
+        <button class="btn btn-primary" (click)="panNumero('8')">8</button>
+        <button class="btn btn-primary" (click)="panNumero('7')">7</button>
+        <button class="btn btn-primary" (click)="panNumero('6')">6</button>
+        <button class="btn btn-primary" (click)="panNumero('5')">5</button>
+        <button class="btn btn-primary" (click)="panNumero('4')">4</button>
+        <button class="btn btn-primary" (click)="panNumero('3')">3</button>
+        <button class="btn btn-primary" (click)="panNumero('2')">2</button>
+        <button class="btn btn-primary" (click)="panNumero('1')">1</button>
+        <button class="btn btn-primary" (click)="panNumero('.')">.</button>
+        <button class="btn btn-primary" (click)="panNumero('0')">0</button>
+        <button class="btn btn-primary" (click)="limpiar()">C</button>
+      </div>
+      <div class="op-pan text-end">
+        <button class="btn btn-primary" (click)="del()">DEL</button>
+        <button class="btn btn-primary" (click)="operacion('/')">/</button>
+        <button class="btn btn-primary" (click)="operacion('x')">x</button>
+        <button class="btn btn-primary" (click)="operacion('-')">-</button>
+        <button class="btn btn-primary" (click)="operacion('+')">+</button>
+        <button class="btn btn-primary" (click)="igual()">=</button>
+      </div>
+    </div>
+  </div>
+</router-outlet>
